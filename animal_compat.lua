@@ -1,4 +1,6 @@
----@enum CompatGroup
+-- Animal emote compatibility data ported from rpemotes-reborn
+-- (https://github.com/alberttheprince/rpemotes-reborn), licensed GPL-3.0.
+
 local CompatGroup = {
     DOG = 'Dog',
     SMALL_DOG = 'SmallDog',
@@ -9,7 +11,6 @@ local CompatGroup = {
     COYOTE = 'Coyote',
 }
 
---- nested table of parent child relationships
 local relationships = {
     [CompatGroup.DOG] = {
         [CompatGroup.ROTTWEILER] = {},
@@ -22,21 +23,16 @@ local relationships = {
     [CompatGroup.COYOTE] = {},
 }
 
---- models not listed will be assumed to be compatible with all emotes not assigned to a compat group.
----@type table<integer, CompatGroup>
 local models = {
-    -- ROTTWEILER
     [`a_c_chop`] = CompatGroup.ROTTWEILER,
     [`a_c_rottweiler`] = CompatGroup.ROTTWEILER,
     [`a_c_shepherd`] = CompatGroup.ROTTWEILER,
 
-    -- popcornrp-pets: https://github.com/alberttheprince/popcornrp-pets
     [`a_c_k9`] = CompatGroup.ROTTWEILER,
     [`k9_male`] = CompatGroup.ROTTWEILER,
     [`k9_female`] = CompatGroup.ROTTWEILER,
-    [`doberman`] = CompatGroup.ROTTWEILER, -- this shares the same name as future shop's doberman, comment this one out and uncomment the one below if using future shop's
+    [`doberman`] = CompatGroup.ROTTWEILER,
     [`chowchow`] = CompatGroup.ROTTWEILER,
-    -- Popcorn Roleplay Peds: https://popcornrp-store.tebex.io/
     [`ame`] = CompatGroup.ROTTWEILER,
     [`BullTerrier`] = CompatGroup.ROTTWEILER,
     [`Cattle_Dog`] = CompatGroup.ROTTWEILER,
@@ -60,7 +56,6 @@ local models = {
     [`Weimaranerprp`] = CompatGroup.ROTTWEILER,
     [`goredogfprp`] = CompatGroup.ROTTWEILER,
     [`goredogmprp`] = CompatGroup.ROTTWEILER,
-    -- Future Store: https://future.tebex.io/category/animals-1
     [`abdog`] = CompatGroup.ROTTWEILER,
     [`ft-boxer`] = CompatGroup.ROTTWEILER,
     [`ft-pitbull2`] = CompatGroup.ROTTWEILER,
@@ -79,22 +74,17 @@ local models = {
     [`k9`] = CompatGroup.ROTTWEILER,
     [`ft_kangal`] = CompatGroup.ROTTWEILER,
     [`riley`] = CompatGroup.ROTTWEILER,
-    -- Bugs Mods: https://bugs-basement.tebex.io/
     [`bugk9`] = CompatGroup.ROTTWEILER,
     [`bugxl`] = CompatGroup.ROTTWEILER,
     [`k9wolf`] = CompatGroup.ROTTWEILER,
     [`pitbull`] = CompatGroup.ROTTWEILER,
     [`bugdoberman`] = CompatGroup.ROTTWEILER,
     [`bughusky`] = CompatGroup.ROTTWEILER,
-    -- DWX https://forum.cfx.re/t/free-rework-edit-animal-ped-fivem-ready-german-shepherd-belgian-malinois
     [`dwxunit`] = CompatGroup.ROTTWEILER,
 
-    -- RETRIEVER
     [`a_c_retriever`] = CompatGroup.RETRIEVER,
 
-    -- popcornrp-pets: https://github.com/alberttheprince/popcornrp-pets
     [`robot_dog`] = CompatGroup.RETRIEVER,
-    -- Popcorn Roleplay Peds: https://popcornrp-store.tebex.io/
     [`akitaprp`] = CompatGroup.RETRIEVER,
     [`bandoggeprp`] = CompatGroup.RETRIEVER,
     [`bandoggeprpxl`] = CompatGroup.RETRIEVER,
@@ -109,16 +99,13 @@ local models = {
     [`standardpitbullprp`] = CompatGroup.RETRIEVER,
     [`poprppandacub`] = CompatGroup.RETRIEVER,
 
-    -- HUSKY
     [`a_c_husky`] = CompatGroup.HUSKY,
     [`a_c_dalmatian`] = CompatGroup.HUSKY,
 
-    -- Popcorn Roleplay Peds: https://popcornrp-store.tebex.io/
     [`huskyk9_new`] = CompatGroup.HUSKY,
     [`poprptibetmastif`] = CompatGroup.HUSKY,
     [`voidhandpoprp`] = CompatGroup.HUSKY,
     [`poprpdirewolfsilv`] = CompatGroup.HUSKY,
-    -- Future Store: https://future.tebex.io/category/animals-1
     [`akita_inu`] = CompatGroup.HUSKY,
     [`dalmatian`] = CompatGroup.HUSKY,
     [`dane`] = CompatGroup.HUSKY,
@@ -132,14 +119,11 @@ local models = {
     [`ft-pandags`] = CompatGroup.HUSKY,
     [`a_c_pitbull`] = CompatGroup.HUSKY,
     [`shiba`] = CompatGroup.HUSKY,
-    -- [`doberman`] = CompatGroup.HUSKY, -- this shares the same name as popcornrp-pets doberman, comment that one out and uncomment this if you are using this one
 
-    -- SMALL_DOG
     [`a_c_poodle`] = CompatGroup.SMALL_DOG,
     [`a_c_pug`] = CompatGroup.SMALL_DOG,
     [`a_c_westy`] = CompatGroup.SMALL_DOG,
 
-    -- Popcorn Roleplay Peds: https://popcornrp-store.tebex.io/
     [`a_c_airterrier`] = CompatGroup.SMALL_DOG,
     [`babypygmyhippoprp`] = CompatGroup.SMALL_DOG,
     [`alligatorprp`] = CompatGroup.SMALL_DOG,
@@ -161,7 +145,6 @@ local models = {
     [`samoyedpuppyprp`] = CompatGroup.SMALL_DOG,
     [`standardpoodlepupprp`] = CompatGroup.SMALL_DOG,
     [`poprpcorgi`] = CompatGroup.SMALL_DOG,
-    -- Future Store: https://future.tebex.io/category/animals-1
     [`beagle`] = CompatGroup.SMALL_DOG,
     [`corgi`] = CompatGroup.SMALL_DOG,
     [`russel`] = CompatGroup.SMALL_DOG,
@@ -186,7 +169,6 @@ local models = {
     [`ft-pshepherd`] = CompatGroup.SMALL_DOG,
     [`ft-shiba`] = CompatGroup.SMALL_DOG,
     [`ft_samoyed`] = CompatGroup.SMALL_DOG,
-    -- Bugs Mods: https://bugs-basement.tebex.io/
     [`a_c_aussiepup`] = CompatGroup.SMALL_DOG,
     [`k9puppy`] = CompatGroup.SMALL_DOG,
     [`a_c_pitbullpup`] = CompatGroup.SMALL_DOG,
@@ -198,12 +180,9 @@ local models = {
     [`bugxlpuppy`] = CompatGroup.SMALL_DOG,
     [`bughuskypup`] = CompatGroup.SMALL_DOG,
 
-    -- CAT
     [`a_c_cat`] = CompatGroup.CAT,
 
-    -- popcornrp-pets: https://github.com/alberttheprince/popcornrp-pets
     [`armadillo`] = CompatGroup.CAT,
-    -- Popcorn Roleplay Peds: https://popcornrp-store.tebex.io/
     [`bshorthairpoprp`] = CompatGroup.CAT,
     [`koalaprp`] = CompatGroup.CAT,
     [`popcornrparcticfox`] = CompatGroup.CAT,
@@ -213,21 +192,16 @@ local models = {
     [`raccoon_new`] = CompatGroup.CAT,
     [`sphynxpoprp`] = CompatGroup.CAT,
 
-    -- Bug Store: https://bugs-store.tebex.io/
     [`tabbycat`] = CompatGroup.CAT,
 
-    -- COYOTE
     [`A_C_Coyote`] = CompatGroup.COYOTE,
     [`A_C_Coyote_02`] = CompatGroup.COYOTE,
 
-    -- popcornrp-pets: https://github.com/alberttheprince/popcornrp-pets
     [`redfoxprp`] = CompatGroup.COYOTE,
     [`dingo`] = CompatGroup.COYOTE,
 
 }
 
---- which emotes can the compat group use.
----@type table<CompatGroup, string[]>
 local emoteCompatibility = {
     [CompatGroup.DOG] = {
         'bdogindicateahead',
@@ -338,8 +312,8 @@ local emoteCompatibility = {
         'bdogbark',
     },
     [CompatGroup.RETRIEVER] = {
-        'bdogbark2', -- Retrievers use different anims/skeletons from Rottweilers, so we need to use them specifically for retriever-based peds to work
-        'bdogexcited', -- Retrievers use different anims/skeletons from Rottweilers, so we need to use them specifically for retriever-based peds to work
+        'bdogbark2',
+        'bdogexcited',
     },
     [CompatGroup.HUSKY] = { },
     [CompatGroup.CAT] = {
@@ -369,86 +343,58 @@ local emoteCompatibility = {
     },
 }
 
---- Build a map of each CompatGroup to all its ancestors (parent groups)
---- This allows for fast inheritance lookups
----@return table<CompatGroup, CompatGroup[]>
-local function buildAncestorMap()
-    local ancestorMap = {}
+local ancestors = {}
+local function walk(tree, chain)
+  for group, children in pairs(tree) do
+    local list = {}
+    for i = 1, #chain do list[i] = chain[i] end
+    ancestors[group] = list
+    local next = {}
+    for i = 1, #chain do next[i] = chain[i] end
+    next[#next + 1] = group
+    walk(children, next)
+  end
+end
+walk(relationships, {})
 
-    --- Recursive function to traverse the relationship tree
-    ---@param node table The current node in the tree
-    ---@param ancestors CompatGroup[] The ancestors of the current node
-    local function traverse(node, ancestors)
-        for group, children in pairs(node) do
-            -- Store all ancestors for this group
-            local groupAncestors = {}
-            for i = 1, #ancestors do
-                groupAncestors[#groupAncestors + 1] = ancestors[i]
-            end
-            ancestorMap[group] = groupAncestors
-
-            -- Create new ancestor list including current group
-            local newAncestors = {}
-            for i = 1, #ancestors do
-                newAncestors[#newAncestors + 1] = ancestors[i]
-            end
-            newAncestors[#newAncestors + 1] = group
-
-            -- Recursively traverse children
-            traverse(children, newAncestors)
-        end
-    end
-
-    traverse(relationships, {})
-    return ancestorMap
+local allowed = {}
+local grouped = {}
+for group, list in pairs(emoteCompatibility) do
+  local set = {}
+  for _, id in ipairs(list) do
+    set[id] = true
+    grouped[id] = true
+  end
+  allowed[group] = set
 end
 
--- Build the ancestor map once at initialization for O(1) lookups
-local ancestorMap = buildAncestorMap()
+ValCompat = {}
 
---- Convert emoteCompatibility arrays to sets for O(1) lookup
----@type table<CompatGroup, table<string, boolean>>
-local emoteCompatibilitySets = {}
-for group, emotes in pairs(emoteCompatibility) do
-    emoteCompatibilitySets[group] = {}
-    for _, emoteName in ipairs(emotes) do
-        emoteCompatibilitySets[group][emoteName] = true
-    end
+function ValCompat.groupOf(model)
+  return models[model]
 end
 
---- Build a set of all emotes assigned to any compat group
----@type table<string, boolean>
-local emotesInCompatGroups = {}
-for _, emotes in pairs(emoteCompatibilitySets) do
-    for emoteName, _ in pairs(emotes) do
-        emotesInCompatGroups[emoteName] = true
-    end
+function ValCompat.isAnimalEmote(id)
+  return grouped[id] == true
 end
 
----@param model integer The model hash
----@param emoteName string The name of the emote
----@return boolean compatible True if the model can use the emote
-function IsModelCompatible(model, emoteName)
-    -- Models not in the list are only compatible with emotes not in any compat group
-    local compatGroup = models[model]
-    if not compatGroup then
-        return not emotesInCompatGroups[emoteName]
-    end
-
-    -- Check if the emote is allowed for this group or any ancestor
-    if emoteCompatibilitySets[compatGroup] and emoteCompatibilitySets[compatGroup][emoteName] then
-        return true
-    end
-
-    if ancestorMap[compatGroup] then
-        for i = 1, #ancestorMap[compatGroup] do
-            local ancestor = ancestorMap[compatGroup][i]
-            if emoteCompatibilitySets[ancestor] and emoteCompatibilitySets[ancestor][emoteName] then
-                return true
-            end
-        end
-    end
-
-    -- Emote not found in compatibility lists, not compatible
-    return false
+function ValCompat.isCompatible(model, id)
+  local group = models[model]
+  if not group then return not grouped[id] end
+  if allowed[group] and allowed[group][id] then return true end
+  for _, parent in ipairs(ancestors[group] or {}) do
+    if allowed[parent] and allowed[parent][id] then return true end
+  end
+  return false
 end
+
+exports('GetCompatibility', function(model)
+  local group = models[model]
+  if not group then return { restricted = grouped, allowed = nil } end
+  local set = {}
+  for id in pairs(allowed[group] or {}) do set[id] = true end
+  for _, parent in ipairs(ancestors[group] or {}) do
+    for id in pairs(allowed[parent] or {}) do set[id] = true end
+  end
+  return { restricted = grouped, allowed = set }
+end)
